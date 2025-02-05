@@ -1,6 +1,17 @@
-const page = () => {
+'use client'
+
+import AuthForm from '@/components/forms/AuthForm'
+import { SignUpSchema } from '@/lib/validations'
+import React from 'react'
+
+const signUp = () => {
   return (
-    <div>page</div>
+    <AuthForm
+      formType="SIGN_UP"
+      schema={SignUpSchema}
+      defaultValues={{ email: '', password: '', name: '', username: '' }}
+      onSubmit={(data) => Promise.resolve({ success: true, data })}
+    />
   )
 }
-export default page
+export default signUp
